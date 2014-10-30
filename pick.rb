@@ -24,9 +24,29 @@ def featureB(b)
   end 
 end
 
-name = featureC(ARGV[0])
-if name!=""			
+def featureC(str)
+	allName = File.readlines("engineers.txt")
+	for i in 0..allName.size-1
+		if allName[i].include? str
+		return allName[i]
+		end
+	end
+	return " "
+
+end
+
+if(!ARGV.empty?)
+	name = featureC(ARGV[0])
+	if name==" "	
+		name = pick_engineer()	
+	end
+	puts name				#print value that return from function featureC
+	puts featureA(name)			#print value that return from function featureA
+	puts featureB(name)			#print value that return from function featureB
+else
+	name = pick_engineer()	
 	puts name				#print value that return from function featureC
 	puts featureA(name)			#print value that return from function featureA
 	puts featureB(name)			#print value that return from function featureB
 end
+
