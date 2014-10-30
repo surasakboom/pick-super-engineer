@@ -31,3 +31,16 @@ puts featureA(name)			#print value that return from function featureA
 puts featureB(name)			#print value that return from function featureB
 
 
+
+def feature_c(str)
+	allName = File.readlines("engineers.txt")
+	for i in 0..allName.size-1
+		for j in 0..allName[i].size-str.size
+			if allName[i][0..str.size-1].include? str
+			return allName[i]
+			end
+		end
+	end
+end
+
+puts feature_c("Surasak")
