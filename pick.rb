@@ -25,14 +25,7 @@ def featureB(b)
   end 
 end
 
-name = pick_engineer()					
-puts name				#print value that return from function pick_engineer()
-puts featureA(name)			#print value that return from function featureA
-puts featureB(name)			#print value that return from function featureB
-
-
-
-def feature_c(str)
+def featureC(str)
 	allName = File.readlines("engineers.txt")
 	for i in 0..allName.size-1
 		for j in 0..allName[i].size-str.size
@@ -42,5 +35,9 @@ def feature_c(str)
 		end
 	end
 end
-
-puts feature_c("Surasak")
+t1=Time.now
+name = featureC("Tat")				
+puts name				#print value that return from function featureC
+puts featureA(name)			#print value that return from function featureA
+puts featureB(name)			#print value that return from function featureB
+puts Time.now-t1
