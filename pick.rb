@@ -35,6 +35,7 @@ def featureC(str)
 		end
 	end
 end
+
 t1=Time.now
 name = featureC("Tat")				
 puts name				#print value that return from function featureC
