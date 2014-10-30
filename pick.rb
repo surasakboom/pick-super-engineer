@@ -4,9 +4,8 @@ def pick_engineer()				#Create new function name "pick_engineer"
   return randName				#return random name of engineer student
 end
 
-
 def featureA(name_check)				
-	name_check.gsub(" ",".")			#change " " to "." 
+	name_check.gsub(" ",".")	#change " " to "." 
 end
 
 def featureB(b)
@@ -25,20 +24,9 @@ def featureB(b)
   end 
 end
 
-def featureC(str)
-	allName = File.readlines("engineers.txt")
-	for i in 0..allName.size-1
-		for j in 0..allName[i].size-str.size
-			if allName[i][0..str.size-1].include? str
-			return allName[i]
-			end
-		end
-	end
+name = featureC(ARGV[0])
+if name!=""			
+	puts name				#print value that return from function featureC
+	puts featureA(name)			#print value that return from function featureA
+	puts featureB(name)			#print value that return from function featureB
 end
-
-t1=Time.now
-name = featureC("Tat")				
-puts name				#print value that return from function featureC
-puts featureA(name)			#print value that return from function featureA
-puts featureB(name)			#print value that return from function featureB
-puts Time.now-t1
