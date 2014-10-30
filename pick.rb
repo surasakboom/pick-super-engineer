@@ -28,12 +28,11 @@ end
 def featureC(str)
 	allName = File.readlines("engineers.txt")
 	for i in 0..allName.size-1
-		for j in 0..allName[i].size-str.size
-			if allName[i][0..str.size-1].include? str
-			return allName[i]
-			end
+		if allName[i].include? str
+		return allName[i]
 		end
 	end
+	return " "
 end
 
 t1=Time.now
