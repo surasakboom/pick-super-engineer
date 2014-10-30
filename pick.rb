@@ -4,4 +4,11 @@ def pick_engineer()					#Create new function name "pick_engineer"
 	return randName					#return random name of engineer student
 end
 
-puts pick_engineer()					#print random name of engineer student(call function "pick_engineer()")
+def featureA(name_check)				
+	name_check.gsub!(" ",".")			#change " " ->"." 
+end
+
+name = pick_engineer()					
+puts name						#print random name of engineer student(call 								function "pick_engineer()")
+puts featureA(name)					#puts return call function
+
